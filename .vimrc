@@ -1,4 +1,4 @@
-"paste mode to automatically set/unset Vim's paste mode when you paste.
+"insert mode to automatically set/unset Vim's paste mode when you paste.
 let &t_SI .= "\<Esc>[?2004h"
 let &t_EI .= "\<Esc>[?2004l"
 
