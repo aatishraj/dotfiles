@@ -30,8 +30,8 @@ if type _git &> /dev/null && [ -f /usr/local/etc/bash_completion.d/git-completio
     complete -o default -o nospace -F _git g;
 fi;
 
-# Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
-[ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
+#ssh tab option from $HOME/.ssh/known_hosts
+complete -W "$(echo `cat ~/.ssh/known_hosts | cut -f 1 -d ' ' | sed -e s/,.*//g | uniq | grep -v "\["`;)" ssh
 
 #To use Sublime Text as the editor for many commands that prompt for input
 #Specifying -w will cause the subl command to not exit until the file is closed.
