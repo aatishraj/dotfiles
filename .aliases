@@ -17,6 +17,15 @@ alias dt="cd ~/Desktop"
 alias g="git"
 alias hist="history"
 alias j="jobs"
+alias host=nslookup
+alias remove_known_host="ssh-keygen -R"
+alias check_upstream="git checkout master ; git fetch upstream ; git merge upstream/master"
+alias check_upstream_hist="git checkout master ; git pull upstream master --allow-unrelated-histories ; git fetch upstream ; git merge upstream/master"
+alias add_upstream="git remote add upstream"
+alias change_upstream="git remote set-url upstream"
+
+# SSH Hosts
+#alias gitbox="ssh -A shockedlocked.corp.gq1.yahoo.com"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
